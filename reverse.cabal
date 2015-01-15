@@ -28,4 +28,5 @@ test-suite doctests
   main-is:          DocTests.hs
   build-depends:
     base,
-    doctest >= 0.8
+    doctest >= 0.8,
+    QuickCheck
