@@ -19,19 +19,21 @@ source-repository head
 library
   exposed-modules:     Reverse.Data.List
   build-depends:       base >=4.7 && <4.8
+  ghc-options:         -Wall
   hs-source-dirs:      src
   default-language:    Haskell2010
 
 executable reverse
   build-depends: base, reverse, clock, formatting >= 6.1.0
   default-language: Haskell2010
+  ghc-options: -Wall
   hs-source-dirs: src
   main-is: Reverse.hs
 
 test-suite doctests
   type:             exitcode-stdio-1.0
   default-language: Haskell2010
-  ghc-options:      -threaded
+  ghc-options:      -Wall -threaded
   hs-source-dirs:   tests
   main-is:          DocTests.hs
   build-depends:
