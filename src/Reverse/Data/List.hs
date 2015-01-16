@@ -7,18 +7,23 @@
 ------------------------------------------------------------------------------
 
 module Reverse.Data.List
-  (obverse
+  (-- $append
+   obverse
   ,reverse)
   where
 
 import Prelude hiding (reverse)
 
--- |
+-- $append
 --
--- prop> [] ++ xs == xs
--- prop> xs ++ [] == xs
+--   [Identity]
 --
--- prop> xs ++ ys ++ zs == (xs ++ ys) ++ zs
+--       prop> [] ++ xs == xs
+--       prop> xs ++ [] == xs
+--
+--   [Associativity]
+--
+--       prop> xs ++ ys ++ zs == (xs ++ ys) ++ zs
 
 -- |
 --
@@ -29,7 +34,7 @@ import Prelude hiding (reverse)
 --
 -- Properties:
 --
--- prop> xs == (obverse . obverse) xs
+-- prop> xs == obverse (obverse xs)
 
 obverse :: [a] -> [a]
 obverse []     = []
@@ -44,7 +49,7 @@ obverse (x:xs) = obverse xs ++ [x]
 --
 -- Properties:
 --
--- prop> xs == (reverse . reverse) (xs :: [Int])
+-- prop> xs == reverse (reverse xs)
 
 reverse :: [a] -> [a]
 reverse xs = reverse' xs []
