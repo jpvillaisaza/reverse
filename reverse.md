@@ -9,6 +9,13 @@ obverse []     = []
 obverse (x:xs) = obverse xs ++ [x]
 ```
 
+```
+> clockSomething (obverse [1..1000000] :: [Integer])
+1.20 s
+> clockSomething (obverse [1..10000000] :: [Integer])
+11.66 s
+```
+
 ```haskell
 reverse' :: [a] -> [a] -> [a]
 reverse' xs ys = obverse xs ++ ys
@@ -60,4 +67,11 @@ reverse xs = reverse' xs []
   where
     reverse' []      ys = ys
     reverse' (x:xs') ys = reverse' xs' (x:ys)
+```
+
+```
+> clockSomething (reverse [1..1000000] :: [Integer])
+493.63 ms
+> clockSomething (reverse [1..10000000] :: [Integer])
+5.08 s
 ```
