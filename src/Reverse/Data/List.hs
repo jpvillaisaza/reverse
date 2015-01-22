@@ -9,7 +9,6 @@
 module Reverse.Data.List
   (-- $append
    obverse
-   -- $obre
   ,reverse)
   where
 
@@ -40,20 +39,6 @@ import Prelude hiding (reverse)
 obverse :: [a] -> [a]
 obverse []     = []
 obverse (x:xs) = obverse xs ++ [x]
-
--- $obre
---
--- > obre :: [a] -> [a] -> [a]
--- > obre xs ys = reverse xs ++ ys
---
--- prop> obverse xs == obre xs []
---
--- prop> obre [] ys == ys
---
--- prop> obre (x:xs) ys == obre xs (x:ys)
-
-obre :: [a] -> [a] -> [a]
-obre xs ys = reverse xs ++ ys
 
 -- |
 --
