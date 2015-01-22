@@ -1,7 +1,8 @@
 Obverse and Reverse
 ===================
 
-
+> Still other examples will show not only the harmony between obverse
+> and reverse, but how coins were dedicated to more than one divinity.
 
 ```haskell
 obverse :: [a] -> [a]
@@ -75,3 +76,5 @@ reverse xs = reverse' xs []
 > clockSomething (reverse [1..10000000] :: [Integer])
 5.08 s
 ```
+
+> Obverse, or reverse, I can make nothing out of it.
