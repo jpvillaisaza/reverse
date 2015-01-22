@@ -69,5 +69,5 @@ obre xs ys = reverse xs ++ ys
 reverse :: [a] -> [a]
 reverse xs = reverse' xs []
   where
-    reverse' []     ys = ys
-    reverse' (x:xs) ys = reverse' xs (x:ys)
+    reverse' []      ys = ys
+    reverse' (x:xs') ys = reverse' xs' (x:ys)
