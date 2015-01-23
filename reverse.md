@@ -26,29 +26,25 @@ reverse' xs ys = obverse xs ++ ys
 obverse xs == reverse' xs []
 ```
 
-```
-reverse' [] ys
-  = (by definition of reverse')
-obverse [] ++ ys
-  = (by definition of obverse)
-[] ++ ys
-  = (by left identity)
-ys
-```
+`reverse' [] ys`  
+  `==` (by definition of `reverse'`)  
+`obverse [] ++ ys`  
+  `==` (by definition of `obverse`)  
+`[] ++ ys`  
+  `==` (by left identity)  
+`ys`
 
-```
-reverse' (x:xs) ys
-  = (by definition of reverse')
-obverse (x:xs) ++ ys
-  = (by definition of obverse)
-(obverse xs ++ [x]) ++ ys
-  = (by associativity)
-obverse xs ++ [x] ++ ys
-  = (by)
-obverse xs ++ (x:ys)
-  = (by definition of reverse')
-reverse' xs (x:ys)
-```
+`reverse' (x:xs) ys`  
+  `==` (by definition of `reverse'`)  
+`obverse (x:xs) ++ ys`  
+  `==` (by definition of `obverse`)  
+`(obverse xs ++ [x]) ++ ys`  
+  `==` (by associativity)  
+`obverse xs ++ [x] ++ ys`  
+  `==` (by)  
+`obverse xs ++ (x:ys)`  
+  `==` (by definition of `reverse'`)  
+`reverse' xs (x:ys)`
 
 ```haskell
 reverse'' :: [a] -> [a] -> [a]
