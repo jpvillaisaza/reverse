@@ -76,5 +76,3 @@ reverse xs = reverse' xs []
 > clockSomething (reverse [1..10000000] :: [Integer])
 5.08 s
 ```
-
-> Obverse, or reverse, I can make nothing out of it.
