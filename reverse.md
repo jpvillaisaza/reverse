@@ -56,25 +56,25 @@ We can calculate an efficient version of reverse' using some laws, as
 follows. In the case of an empty list:
 
 `reverse' [] ys`  
-  `==` (by definition of `reverse'`)  
+&nbsp;&nbsp;`==` (by definition of `reverse'`)  
 `obverse [] ++ ys`  
-  `==` (by definition of `obverse`)  
+&nbsp;&nbsp;`==` (by definition of `obverse`)  
 `[] ++ ys`  
-  `==` (by left identity)  
+&nbsp;&nbsp;`==` (by left identity)  
 `ys`
 
 Otherwise:
 
 `reverse' (x:xs) ys`  
-  `==` (by definition of `reverse'`)  
+&nbsp;&nbsp;`==` (by definition of `reverse'`)  
 `obverse (x:xs) ++ ys`  
-  `==` (by definition of `obverse`)  
+&nbsp;&nbsp;`==` (by definition of `obverse`)  
 `(obverse xs ++ [x]) ++ ys`  
-  `==` (by associativity)  
+&nbsp;&nbsp;`==` (by associativity)  
 `obverse xs ++ [x] ++ ys`  
-  `==` (by)  
+&nbsp;&nbsp;`==` (by)  
 `obverse xs ++ (x:ys)`  
-  `==` (by definition of `reverse'`)  
+&nbsp;&nbsp;`==` (by definition of `reverse'`)  
 `reverse' xs (x:ys)`
 
 To sum up, we have a new auxiliary reverse function:
