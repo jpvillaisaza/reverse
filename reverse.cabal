@@ -1,13 +1,9 @@
 name:                reverse
 version:             0.1.0
 synopsis:            Obverse and Reverse
-description:         Obverse and Reverse
-license:             BSD3
-license-file:        LICENSE
+description:         Obverse and Reverse.
 author:              Juan Pedro Villa Isaza
 maintainer:          jpvillaisaza@gmail.com
--- copyright:
-category:            Sd
 build-type:          Simple
 extra-source-files:  README.md
 cabal-version:       >=1.10
