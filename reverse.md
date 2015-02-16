@@ -75,15 +75,8 @@ Otherwise:
 &nbsp;&nbsp;`==` (by definition of `reverse'`)  
 `reverse' xs (x:ys)`
 
-To sum up, we have a new auxiliary reverse function:
-
-```haskell
-reverse'' :: [a] -> [a] -> [a]
-reverse'' []     ys = ys
-reverse'' (x:xs) ys = reverse'' xs (x:ys)
-```
-
-And now we can define the `reverse` function.
+We've calculated an efficient version of `reverse'`, which we can use
+to define the reverse function, as follows.
 
 ```haskell
 reverse :: [a] -> [a]
@@ -93,8 +86,8 @@ reverse xs = reverse' xs []
     reverse' (x:xs') ys = reverse' xs' (x:ys)
 ```
 
-And this function is more efficient, it's linear. Let's compare the
-running times of obverse and reverse.
+And this function is more efficient than the obverse function.
+which is more efficient than the `obverse` function:
 
 ```
 > clockSomething (reverse [1..1000000] :: [Integer])
