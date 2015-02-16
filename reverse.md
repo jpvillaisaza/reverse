@@ -92,7 +92,6 @@ This is not just an example of how to improve a program's performance,
 but an example of how to use mathematics to find a better algorithm,
 which is “the best way to improve a programs's performance.” We're
 merely using definitions and the fact that lists, the empty list, and
-the append function form a monoid, but we could do so much more.
-
-In short, this is just an example of how to use mathematics as one way
-to better understand and improve our programs.
+the append function form a monoid, but we could do so much more. In
+short, it's just an example of how to use mathematics as one way to
+better understand and improve our programs.
