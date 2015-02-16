@@ -49,9 +49,8 @@ Clearly,
 obverse xs == reverse' xs []
 ```
 
-We can calculate an efficient version of `reverse'` as follows. In the
-case of an empty list,
-
+We can calculate an efficient definition of `reverse'` by induction.
+In the case of an empty list:
 
 `reverse' [] ys`  
 &nbsp;&nbsp;`==` (by definition of `reverse'`)  
@@ -75,8 +74,8 @@ Otherwise:
 &nbsp;&nbsp;`==` (by definition of `reverse'`)  
 `reverse' xs (x:ys)`
 
-We've calculated an efficient version of `reverse'`, which we can use
-to define the reverse function, as follows.
+Now, we can use the efficient definition of `reverse'` to define the
+`reverse` function, as follows:
 
 ```haskell
 reverse :: [a] -> [a]
@@ -86,8 +85,7 @@ reverse xs = reverse' xs []
     reverse' (x:xs') ys = reverse' xs' (x:ys)
 ```
 
-And this function is more efficient than the obverse function.
-which is more efficient than the `obverse` function:
+And this function is more efficient than the `obverse` function:
 
 ```
 > clockSomething (reverse [1..1000000] :: [Integer])
