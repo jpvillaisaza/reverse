@@ -23,8 +23,8 @@ obverse []     = []
 obverse (x:xs) = obverse xs ++ [x]
 ```
 
-In order to get a better idea of the inefficiency of the `obverse`
-function, let's clock it:
+In order to get a better idea of the inefficiency of this function,
+let's clock it:
 
 ```
 > clockSomething (obverse [1..1000000] :: [Integer])
@@ -72,8 +72,8 @@ Otherwise,
 &nbsp;&nbsp;`==` (by definition of `reverse'`)  
 `reverse' xs (x:ys)`
 
-Now, we can use the efficient definition of `reverse'` to define the
-`reverse` function, as follows:
+Now, the efficient definition of `reverse'` can be used to define an
+efficient `reverse` function, as follows:
 
 ```haskell
 reverse :: [a] -> [a]
