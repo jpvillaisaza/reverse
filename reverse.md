@@ -8,13 +8,10 @@ Obverse and Reverse
 
 In Thinking Functionally with Haskell, Richard Bird uses the `reverse`
 function as an example of improving the running time of a computation
-by adding an extra argument, called an accumulating parameter, to a
-function. In doing so, he actually shows an example of calculating a
-function with mathematics and says that “the best way to improve a
-program's performance is to use a better algorithm.” We'll use the
-reverse function as an example of a practical use of mathematical
-concepts in functional programming, or, in a way, how to combine weak
-and strong specifications.
+by adding an accumulating parameter to a function. In doing so, he
+actually shows an example of how to use mathematics to calculate a
+better algorithm for reverse, which is the best way to improve a
+program's performance.
 
 We start with the most basic definition of reverse, except we call it
 obverse... This way of defining reverse is simple and very clear in
@@ -52,8 +49,9 @@ Clearly,
 obverse xs == reverse' xs []
 ```
 
-We can calculate an efficient version of reverse' using some laws, as
-follows. In the case of an empty list:
+We can calculate an efficient version of `reverse'` as follows. In the
+case of an empty list,
+
 
 `reverse' [] ys`  
 &nbsp;&nbsp;`==` (by definition of `reverse'`)  
@@ -118,3 +116,7 @@ how to use mathematics to better understand and improve our programs.
 We can move forward and use things like the functor laws and
 parametricity to improve our programs. We won't be using reverse, but
 it's a good example.
+
+he actually shows an example of calculating a function with
+mathematics and says that “the best way to improve a program's
+performance is to use a better algorithm.”
