@@ -62,12 +62,12 @@ Otherwise,
 `(obverse xs ++ [x]) ++ ys`  
 &nbsp;&nbsp;`==` (by associativity)  
 `obverse xs ++ [x] ++ ys`  
-&nbsp;&nbsp;`==` (by)  
+&nbsp;&nbsp;`==` (by definition of `(++)` and left identity)  
 `obverse xs ++ (x:ys)`  
 &nbsp;&nbsp;`==` (by definition of `reverse'`)  
 `reverse' xs (x:ys)`
 
-Now, the efficient definition of `reverse'` can be used to define an
+The efficient definition of `reverse'` can be used to define an
 efficient `reverse` function, as follows:
 
 ```haskell
@@ -78,7 +78,8 @@ reverse xs = reverse' xs []
     reverse' (x:xs') ys = reverse' xs' (x:ys)
 ```
 
-And this function is more efficient than the `obverse` function:
+In order to compare the efficiency of the `obverse` and `reverse`
+functions, let's clock the latter too:
 
 ```
 > clockSomething (reverse [1..1000000] :: [Integer])
@@ -87,18 +88,11 @@ And this function is more efficient than the `obverse` function:
 5.08 s
 ```
 
-Besides definitions, we're using the fact that lists, the empty list
-and append form a monoid to calculate a better algorithm and improve
-the performance of reverse. And it's just one of Bird's examples of
-how to use mathematics to better understand and improve our programs.
-We can move forward and use things like the functor laws and
-parametricity to improve our programs. We won't be using reverse, but
-it's a good example.
+This is not just an example of how to improve a program's performance,
+but an example of how to use mathematics to find a better algorithm,
+which is “the best way to improve a programs's performance.” We're
+merely using definitions and the fact that lists, the empty list, and
+the append function form a monoid, but we could do so much more.
 
-In doing so, he actually shows an example of how to use
-mathematics to calculate a better algorithm for reverse, which is the
-best way to improve a program's performance.
-
-he actually shows an example of calculating a function with
-mathematics and says that “the best way to improve a program's
-performance is to use a better algorithm.”
+In short, this is just an example of how to use mathematics as one way
+to better understand and improve our programs.
