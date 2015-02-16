@@ -83,13 +83,7 @@ reverse'' []     ys = ys
 reverse'' (x:xs) ys = reverse'' xs (x:ys)
 ```
 
-And we can use it to define reverse in another way, a better way.
-
-```
-[] ++ xs == xs
-xs ++ [] == xs
-xs ++ ys ++ zs == (xs ++ ys) ++ zs
-```
+And now we can define the `reverse` function.
 
 ```haskell
 reverse :: [a] -> [a]
