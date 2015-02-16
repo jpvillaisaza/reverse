@@ -13,10 +13,9 @@ actually shows an example of how to use mathematics to calculate a
 better algorithm for reverse, which is the best way to improve a
 program's performance.
 
-We start with the most basic definition of reverse, except we call it
-obverse... This way of defining reverse is simple and very clear in
-terms of functional programming. If we want to reverse a list, we
-simply reverse its tail and append to that the head.
+Bird begins with a simple and inefficient definition of `reverse`,
+which we'll call `obverse`. Basically, if we want to... obverse a
+list, we simply obverse its tail and then append its head:
 
 ```haskell
 obverse :: [a] -> [a]
@@ -24,9 +23,8 @@ obverse []     = []
 obverse (x:xs) = obverse xs ++ [x]
 ```
 
-Besides simple, this definition is very inefficient, quadratic. Just
-as an example of how to measure time in Haskell, we clock the use of
-obverse:
+In order to get a better idea of the inefficiency of the `obverse`
+function, let's clock it:
 
 ```
 > clockSomething (obverse [1..1000000] :: [Integer])
@@ -35,8 +33,8 @@ obverse:
 11.66 s
 ```
 
-Now, suppose an auxiliary function with an extra parameter which will
-take us to a better reverse.
+In search of a more efficient definition of `obverse`, Bird defines an
+auxiliary function, `reverse'`, as follows:
 
 ```haskell
 reverse' :: [a] -> [a] -> [a]
@@ -49,8 +47,8 @@ Clearly,
 obverse xs == reverse' xs []
 ```
 
-We can calculate an efficient definition of `reverse'` by induction.
-In the case of an empty list:
+An efficient definition of `reverse'` can be calculated by induction.
+In the case of an empty list,
 
 `reverse' [] ys`  
 &nbsp;&nbsp;`==` (by definition of `reverse'`)  
@@ -60,7 +58,7 @@ In the case of an empty list:
 &nbsp;&nbsp;`==` (by left identity)  
 `ys`
 
-Otherwise:
+Otherwise,
 
 `reverse' (x:xs) ys`  
 &nbsp;&nbsp;`==` (by definition of `reverse'`)  
