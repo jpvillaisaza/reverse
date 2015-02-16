@@ -4,7 +4,7 @@ Obverse and Reverse
 > Still other examples will show not only the harmony between obverse
 > and reverse, but how coins were dedicated to more than one divinity.
 
-<https://github.com/jpvillaisaza/reverse>
+(See <https://github.com/jpvillaisaza/reverse>.)
 
 In Thinking Functionally with Haskell, Richard Bird uses the `reverse`
 function as an example of improving the running time of a computation
