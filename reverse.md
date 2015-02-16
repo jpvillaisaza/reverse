@@ -6,16 +6,11 @@ Obverse and Reverse
 
 (See <https://github.com/jpvillaisaza/reverse>.)
 
-In Thinking Functionally with Haskell, Richard Bird uses the `reverse`
-function as an example of improving the running time of a computation
-by adding an accumulating parameter to a function. In doing so, he
-actually shows an example of how to use mathematics to calculate a
-better algorithm for reverse, which is the best way to improve a
-program's performance.
-
-Bird begins with a simple and inefficient definition of `reverse`,
-which we'll call `obverse`. Basically, if we want to... obverse a
-list, we simply obverse its tail and then append its head:
+In section 7.5 of Thinking Functionally with Haskell, Richard Bird
+uses the `reverse` function as an example of improving the running
+time of a function by adding an accumulating parameter to it. He
+begins with a simple and inefficient definition of `reverse`, which
+we'll call `obverse`:
 
 ```haskell
 obverse :: [a] -> [a]
@@ -99,6 +94,10 @@ how to use mathematics to better understand and improve our programs.
 We can move forward and use things like the functor laws and
 parametricity to improve our programs. We won't be using reverse, but
 it's a good example.
+
+In doing so, he actually shows an example of how to use
+mathematics to calculate a better algorithm for reverse, which is the
+best way to improve a program's performance.
 
 he actually shows an example of calculating a function with
 mathematics and says that “the best way to improve a program's
