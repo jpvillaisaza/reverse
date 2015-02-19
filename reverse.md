@@ -4,7 +4,7 @@ Obverse and Reverse
 > Still other examples will show not only the harmony between obverse
 > and reverse, but how coins were dedicated to more than one divinity.
 
-&mdash;Isaac Bassett Choate
+&mdash;Isaac Bassett Choate ([Myth in American Coinage](http://www.gutenberg.org/ebooks/25064))
 
 (See <https://github.com/jpvillaisaza/reverse>.)
 
