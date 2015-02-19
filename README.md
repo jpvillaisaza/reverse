@@ -3,6 +3,8 @@ Obverse and Reverse [![Build Status][build-status-image]][build-status]
 
 > Obverse, or reverse, I can make nothing out of it.
 
+&mdash;Mohi
+
 ```
 git clone https://github.com/jpvillaisaza/reverse.git
 cd reverse/
