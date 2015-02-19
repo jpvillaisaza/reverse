@@ -4,6 +4,8 @@ Obverse and Reverse
 > Still other examples will show not only the harmony between obverse
 > and reverse, but how coins were dedicated to more than one divinity.
 
+&mdash;Isaac Bassett Choate
+
 (See <https://github.com/jpvillaisaza/reverse>.)
 
 In section 7.5 of Thinking Functionally with Haskell, Richard Bird
