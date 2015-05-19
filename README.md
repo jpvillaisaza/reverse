@@ -18,5 +18,5 @@ cabal build
 cabal test
 ```
 
-[build-status]: https://travis-ci.org/jpvillaisaza/reverse
-[build-status-image]: https://travis-ci.org/jpvillaisaza/reverse.svg?branch=master
+[build-status]: https://travis-ci.org/stackbuilders/reverse
+[build-status-image]: https://travis-ci.org/stackbuilders/reverse.svg?branch=master
