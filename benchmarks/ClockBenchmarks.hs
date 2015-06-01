@@ -1,9 +1,15 @@
+{-# LANGUAGE BangPatterns      #-}
 {-# LANGUAGE OverloadedStrings #-}
 
-module Reverse.System.Clock (clockSomething) where
+-- |
+
+module Main (main) where
+
+import Reverse (obverse,reverse)
 
 import Control.Exception (evaluate)
 import Control.Monad (void)
+import Data.Time (diffUTCTime,getCurrentTime)
 import Formatting (fprint,(%))
 import Formatting.Clock (timeSpecs)
 import Prelude hiding (reverse)
@@ -23,3 +29,15 @@ clockSomething something = do
   void (evaluate something)
   end <- getTime Monotonic
   fprint (timeSpecs % "\n") start end
+
+timeSomething :: a -> IO ()
+timeSomething something = do
+  start <- getCurrentTime
+  let !_ = something
+  end <- getCurrentTime
+  print (diffUTCTime end start)
+
+main :: IO ()
+main = do
+  clockSomething (obverse [1..10000000])
+  clockSomething (reverse [1..10000000])

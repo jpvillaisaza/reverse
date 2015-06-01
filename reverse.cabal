@@ -1,32 +1,25 @@
-name:                reverse
-version:             0.1.0
-synopsis:            Obverse and Reverse
-description:         Obverse and Reverse.
-author:              Juan Pedro Villa Isaza
-maintainer:          jpvillaisaza@gmail.com
-build-type:          Simple
-extra-source-files:  README.md
-cabal-version:       >=1.10
+name:               reverse
+version:            0.1.0
+synopsis:           Obverse and Reverse
+description:        Obverse and Reverse.
+author:             Juan Pedro Villa Isaza
+maintainer:         jpvillaisaza@gmail.com
+build-type:         Simple
+extra-source-files: README.md
+cabal-version:      >=1.10
 
-bug-reports: https://github.com/jpvillaisaza/reverse/issues
+bug-reports:        https://github.com/jpvillaisaza/reverse/issues
 
 source-repository head
-  type:     git
-  location: https://github.com/jpvillaisaza/reverse
+  type:             git
+  location:         https://github.com/jpvillaisaza/reverse
 
 library
-  exposed-modules:     Reverse, Reverse.Data.List, Reverse.System.Clock
-  build-depends:       base >=4.7 && <4.8, clock, formatting >= 6.1.0
-  ghc-options:         -Wall
-  hs-source-dirs:      src
-  default-language:    Haskell2010
-
-executable reverse
-  build-depends: base, reverse
+  build-depends:    base >=4.7 && < 4.9
   default-language: Haskell2010
-  ghc-options: -Wall
-  hs-source-dirs: src
-  main-is: Main.hs
+  exposed-modules:  Reverse
+  ghc-options:      -Wall
+  hs-source-dirs:   src
 
 test-suite doctests
   type:             exitcode-stdio-1.0
@@ -38,3 +31,17 @@ test-suite doctests
     base,
     doctest >= 0.8,
     QuickCheck
+
+benchmark clock-benchmarks
+  build-depends:    base, clock, formatting >= 6.1.0, reverse, time
+  default-language: Haskell2010
+  hs-source-dirs:   benchmarks
+  main-is:          ClockBenchmarks.hs
+  type:             exitcode-stdio-1.0
+
+benchmark criterion-benchmarks
+  build-depends:    base, criterion, reverse
+  default-language: Haskell2010
+  hs-source-dirs:   benchmarks
+  main-is:          CriterionBenchmarks.hs
+  type:             exitcode-stdio-1.0

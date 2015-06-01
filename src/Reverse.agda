@@ -4,7 +4,7 @@
 --
 --------------------------------------------------------------------------------
 
-module Reverse.Data.List where
+module Reverse where
 
 open import Relation.Binary.PropositionalEquality using (_≡_; refl; cong; sym)
 
