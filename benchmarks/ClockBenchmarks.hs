@@ -14,7 +14,7 @@ import Formatting ((%),fprint)
 import Formatting.Clock (timeSpecs)
 import Prelude hiding (reverse)
 import System.Clock (Clock(Monotonic),getTime)
-import Test.QuickCheck (Arbitrary(arbitrary),Gen,generate,vectorOf)
+import Test.QuickCheck (Arbitrary(arbitrary),generate,vectorOf)
 
 -- |
 --
